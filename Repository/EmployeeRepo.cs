@@ -24,5 +24,11 @@ namespace LMS_PROJECT.Repository
 
             return ar;
         }
+
+        public List<ManagerDBModel> AllManagers()
+        {
+            var managers = dataAccessLayer_LMS.Managers.ToList();
+            return managers;
+        }
     }
 }

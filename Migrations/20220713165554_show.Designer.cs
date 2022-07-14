@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LMS_PROJECT.Migrations
 {
     [DbContext(typeof(DataAccessLayer_LMS))]
-    [Migration("20220712123344_Team6")]
-    partial class Team6
+    [Migration("20220713165554_show")]
+    partial class show
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -43,12 +43,30 @@ namespace LMS_PROJECT.Migrations
                     b.Property<string>("EmpName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("EmpPswd")
+                    b.HasKey("EmpId");
+
+                    b.ToTable("Employees");
+                });
+
+            modelBuilder.Entity("LMS_PROJECT.Models.ManagerDBModel", b =>
+                {
+                    b.Property<int>("EmpId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("EmpMail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("EmpMobile")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("EmpName")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("EmpId");
 
-                    b.ToTable("Employees");
+                    b.ToTable("Managers");
                 });
 #pragma warning restore 612, 618
         }

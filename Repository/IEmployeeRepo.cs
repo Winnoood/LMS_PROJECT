@@ -9,5 +9,6 @@ namespace LMS_PROJECT.Repository
     public interface IEmployeeRepo
     {
         List<EmployeeDBModel> AllEmployees();
+        List<ManagerDBModel> AllManagers();
     }
 }

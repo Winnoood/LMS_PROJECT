@@ -41,12 +41,30 @@ namespace LMS_PROJECT.Migrations
                     b.Property<string>("EmpName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("EmpPswd")
+                    b.HasKey("EmpId");
+
+                    b.ToTable("Employees");
+                });
+
+            modelBuilder.Entity("LMS_PROJECT.Models.ManagerDBModel", b =>
+                {
+                    b.Property<int>("EmpId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("EmpMail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("EmpMobile")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("EmpName")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("EmpId");
 
-                    b.ToTable("Employees");
+                    b.ToTable("Managers");
                 });
 #pragma warning restore 612, 618
         }

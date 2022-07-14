@@ -12,6 +12,7 @@ namespace LMS_PROJECT.Helpers
         public ApplicationMapper()
         {
             CreateMap<EmployeeModel, EmployeeDBModel>().ReverseMap();
+            CreateMap<ManagerModel, ManagerDBModel>().ReverseMap();
         }
     }
 }

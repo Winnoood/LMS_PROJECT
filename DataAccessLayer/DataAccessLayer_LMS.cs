@@ -14,5 +14,6 @@ namespace LMS_PROJECT.DataAccessLayer
 
         }
         public DbSet<EmployeeDBModel> Employees { get; set; }
+        public DbSet<ManagerDBModel> Managers { get; set; }
     }
 }
